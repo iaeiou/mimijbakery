@@ -1,0 +1,22 @@
+{
+  "name": "mimijbakery.com",
+  "version": "1.0.0",
+  "description": "A website for Mimi J's recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bab014/mimijbakery.git"
+  },
+  "author": "bbeatty14@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bab014/mimijbakery/issues"
+  },
+  "homepage": "https://github.com/bab014/mimijbakery#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.0"
+  }
+}
