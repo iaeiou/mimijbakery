@@ -4,8 +4,16 @@
         {{ partial "head/head.html" }}
         <title>Mimi J's Bakery</title>
     </head>
-    <body>
-        <h1 class="text-xl text-orange-600">Mimi J's Bakery</h1>
-        {{ block "main" . }}{{ end }}
+    <body id="main">
+        
+        <!-- Navbar -->
+        {{ partial "navigation/navbar" . }}
+        
+        <!-- Main body -->
+        <div class="max-w-7xl mx-auto pt-5">
+            {{ block "main" . }}{{ end }}
+        </div>
+
+        <script language="javascript" type="text/javascript"  src="js/main.js"></script>
     </body>
 </html>
