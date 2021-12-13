@@ -1,3 +1,5 @@
 baseURL: 'http://mimijbakery.com/'
 languageCode: 'en-us'
 title: "Mimi J's Bakery"
+params:
+  homePageSaying: Try these recipes

@@ -3,9 +3,27 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'corinth': ['corinthia', 'cursive']
+        'corinth': ['corinthia', 'cursive'],
+        'slab': ['"roboto slab"', 'serif']
       },
+      animation: {
+        slideInLeft: '1s ease-out 0s 1 slideInLeft',
+      },
+      keyframes: {
+        slideInLeft: {
+          '0%': {
+            transform: 'translateX(-33%)',
+            opacity: 0
+          },
+          '100%': {
+            transform: 'translateX(0)',
+            opacity: 1,
+          }
+        }
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 }

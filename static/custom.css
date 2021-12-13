@@ -1,0 +1,15 @@
+/* Animations */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-33%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.main-card {
+  animation: 1s ease-out 0s 1 slideInLeft;
+}

@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ $currDir := .Page.File.Dir }}
+    {{ if eq $currDir "about/" }}
+        {{ partial "sections/about.html" . }}
+    {{ else }}
+        <div>
+            <h2>{{ .Title }}</h2>
+            <h3>{{ $currDir }}</h3>
+            <h3>{{ .Section }}</h3>
+        </div>
+        <ul>
+            {{ range .Pages }}
+            <li>{{ .Content }}</li>
+            {{ end }}
+        </ul>
+    {{ end }}
+{{ end }}

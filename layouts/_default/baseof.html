@@ -4,7 +4,7 @@
         {{ partial "head/head.html" }}
         <title>Mimi J's Bakery</title>
     </head>
-    <body id="main">
+    <body id="main" class="transition-opacity duration-75">
         
         <!-- Navbar -->
         {{ partial "navigation/navbar" . }}
@@ -14,6 +14,6 @@
             {{ block "main" . }}{{ end }}
         </div>
 
-        <script language="javascript" type="text/javascript"  src="js/main.js"></script>
+        <script language="javascript" type="text/javascript"  src={{ "js/main.js" | absURL }}></script>
     </body>
 </html>
