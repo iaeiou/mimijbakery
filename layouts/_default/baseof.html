@@ -10,10 +10,13 @@
         {{ partial "navigation/navbar" . }}
         
         <!-- Main body -->
-        <div class="max-w-7xl mx-auto pt-5">
-            {{ block "main" . }}{{ end }}
+        <div class="bg-slate-50/50">
+            <div class="max-w-7xl mx-auto pt-5">
+                {{ block "main" . }}{{ end }}
+            </div>
         </div>
 
+        {{/*  TODO: Footer  */}}
         <script language="javascript" type="text/javascript"  src={{ "js/main.js" | absURL }}></script>
     </body>
 </html>

@@ -7,7 +7,7 @@
 </h2>
 
 <!-- Testing variables -->
-{{ range first 3 (where .Site.RegularPages "Section" "blog") }}
-    <p class="font-slab">{{ .Content }}</p>
+{{ range first 3 (where .Site.RegularPages "Section" "recipes") }}
+    {{ partial "sections/recipes/recipe-card.html" . }}
 {{ end }}
 {{ end }}

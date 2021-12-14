@@ -1,5 +1,5 @@
 <!-- TODO make a background photo for navbar --> 
-{{ $currDir := path.Clean .Page.File.Dir }}
+{{ $currDir := index (first 1 (split .Page.File.Dir "/")) 0 }}
 
 <div class=" border-b border-slate-300 h-16">
     <nav class="max-w-7xl mx-auto px-3 flex justify-between items-center h-full">

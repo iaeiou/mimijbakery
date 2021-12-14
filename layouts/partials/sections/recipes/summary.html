@@ -1,0 +1,23 @@
+{{/*  Summary prep  */}}
+<div id="prep" class="flex items-center flex-wrap py-5 justify-between ">
+    {{/*  Prep time  */}}
+    <div class="flex items-center mr-2" id="prep-time">
+        {{ partial "icons/clock.html" . }}
+        <h5 class="text-xs font-bold text-gray-700 ml-1">Prep:</h5>
+        <span class="text-xs">{{ .prep }}</span>
+    </div>
+    {{/*  Difficulty  */}}
+    <div class="flex items-center mr-2">
+        <span class="text-xs">{{ .difficulty }}</span>
+    </div>
+    {{/*  Serves  */}}
+    <div class="flex items-center mr-2">
+        <span class="text-xs mr-1">Serves</span>
+        <span class="text-xs">{{ .serves }}</span>
+    </div>
+    {{/*  Cook time  */}}
+    <div class="flex items-center">
+        <h5 class="text-xs font-bold">Cook:</h5>
+        <span class="text-xs">{{ .cook }}</span>
+    </div>
+</div>
