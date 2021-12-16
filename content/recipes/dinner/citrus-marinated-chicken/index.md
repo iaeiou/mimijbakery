@@ -18,6 +18,7 @@ tags:
   - Chicken
   - Citrus
   - Grill
+  - Latin
 ingredients:
   - 2 pounds of chicken breast
   - 1/2 tablespoon of salt
@@ -27,7 +28,7 @@ ingredients:
   - 1/2 tablespoon chipotle chili powder
   - 1 teaspoon black pepper
   - 1 teaspoon garlic powder
-  - 1 teaspoon onion poder
+  - 1 teaspoon onion powder
 stars: 4
 hasBlog: false
 author: "Bret Beatty"

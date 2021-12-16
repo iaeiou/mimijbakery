@@ -1,15 +1,23 @@
-<div class="rounded w-1/3 mt-2 relative">
+<div class=" w-60 h-68 relative mt-3 shadow-lg shadow-slate-500">
+    
+    {{ $categories := "" }}
+    {{ with .Params.categories }}
+            {{ $categories = . }}
+    {{ end }}
+    {{ $firstCat := index $categories 0 }}
     {{ $thumbNail := .Resources.GetMatch "images/thumbnail.jpg" }}
-    <div class="w-full h-42">
+    
+    <div class="rounded overflow-hidden">
         {{ with $thumbNail }}
             <img 
-                class="object-cover h-full w-full" 
+                class="object-fit h-full w-full" 
                 src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}" 
                 alt="{{ $.Title }}">
         {{ end }}
     </div>
-    <div class="absolute">
-        {{ $categories := .Params.categories }}
-        <h3>{{ reflect.IsSlice $categories }}</h3>
+    <div class="absolute bg-yellow-500 py-0.5 px-4 rounded -bottom-3 left-1/2 transform -translate-x-1/2">
+        <h3 class="text-gray-50 text-xl font-slab">
+            {{ $firstCat }}
+        </h3>
     </div>
 </div>

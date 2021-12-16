@@ -1,75 +1,87 @@
 {{ define "main" }}
 
-{{/*  Variables  */}}
-{{ $thumbNail := .Resources.GetMatch "images/thumbnail.jpg" }}
-{{ $stars := .Params.stars }}
-{{ $remainingStars := sub 5 $stars }}
-{{ $tags := .Params.tags }}
+    {{/*  Variables  */}}
+    {{ $thumbNail := .Resources.GetMatch "images/thumbnail.jpg" }}
+    {{ $categories := "" }}
+    {{ with .Params.categories }}
+        {{ $categories = . }}
+    {{ end }}
 
-<div class="grid grid-cols-3 gap-4 grid-flow-col max-w-xl mx-auto">
-    
-    {{/*  Ingredients and Thumbnail  */}}
-    <div class="">
-        
-        {{/*  Thumbnail  */}}
-        {{ with $thumbNail }}
-            <div class="w-full h-40 rounded-sm overflow-hidden">
-                <img class="object-cover h-full w-full" 
-                     src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}" 
-                     alt="{{ $.Title }}">
-            </div>
-        {{ end }}
+    {{/*  If no stars param is set make stars 0  */}}
+    {{ $stars := 0 }}
+    {{ $remainingStars := 0 }}
+    {{ with .Params.stars }}
+        {{ $stars = . }}
+        {{ $remainingStars = (sub 5 $stars) }}
+    {{ end }}
 
-        {{/*  Ingredients  */}}
-        <h3 class="text-sm font-bold mt-3 text-gray-700">Ingredients</h3>
+    {{/*  {{ $remainingStars := (sub 5 $stars) }}  */}}
+    {{ $tags := .Params.tags }}
+
+    <div class="grid grid-cols-3 gap-4 grid-flow-col max-w-xl mx-auto">
         
-        <ul class="">
-            {{ range .Params.ingredients }}
-                <li class="text-[10px] leading-6 font-light">{{ . }}</li>  
+        {{/*  Ingredients and Thumbnail  */}}
+        <div class="">
+            
+            {{/*  Thumbnail  */}}
+            {{ with $thumbNail }}
+                <div class="w-full h-40 rounded-sm overflow-hidden">
+                    <img class="object-cover h-full w-full" 
+                        src="data:{{ .MediaType }};base64,{{ .Content | base64Encode }}" 
+                        alt="{{ $.Title }}">
+                </div>
             {{ end }}
-        </ul>
-    </div>
 
-    {{/*  Title, tags and steps  */}}
-    <div class="col-span-2">
-        <h5 class="text-xs">{{ printf "%s/%s" (index .Params.categories 0) (index .Params.categories 1) }} Recipe</h5>
-        
-        {{/*  Title  */}}
-        <h2 class="text-2xl font-slab font-medium text-gray-800">{{ .Title }}</h2>
-        <div class="flex">
-            <span class="mr-1 text-[8px]">Added on</span>
-            <p class="text-[8px]">{{ .Date.Format "January 2006" }}</p>
-        </div>
-
-        <div>
-            {{/*  Stars  */}}
-            {{ range (seq 1 $stars) }}
-                {{ partial "icons/star.html" (dict "color" "text-rose-800") }}
-            {{ end }}
-            {{/*  Remaining stars  */}}
-            {{ if gt $remainingStars 0 }}
-                {{ range (seq 1 $remainingStars) }}
-                    {{ partial "icons/star.html" (dict "color" "text-slate-400") }}
+            {{/*  Ingredients  */}}
+            <h3 class="text-sm font-bold mt-3 text-gray-700">Ingredients</h3>
+            
+            <ul class="">
+                {{ range .Params.ingredients }}
+                    <li class="text-[10px] leading-6 font-light">{{ . }}</li>  
                 {{ end }}
-            {{ end }}
+            </ul>
         </div>
 
-        {{/*  Tags  */}}
-        {{ partial "sections/recipes/tags.html" $tags }}
-        
-        {{/*  Summary  */}}
-        <p class="mt-3 text-sm font-light leading-5">{{ .Params.summary }}</p>
-        
-        {{/*  Summary prep  */}}
-        {{ partial "sections/recipes/summary.html" .Params.pre }}
-        
-        <hr class="text-gray-300">
-        
-        {{/*  Steps  */}}
-        <article class="prose prose-sm mt-3">{{ .Content }}</article>
+        {{/*  Title, tags and steps  */}}
+        <div class="col-span-2">
+            <h5 class="text-xs">{{ printf "%s/%s" (index $categories 0) (index $categories 1) }} Recipe</h5>
+            
+            {{/*  Title  */}}
+            <h2 class="text-2xl font-slab font-medium text-gray-800">{{ .Title }}</h2>
+            <div class="flex">
+                <span class="mr-1 text-[8px]">Added on</span>
+                <p class="text-[8px]">{{ .Date.Format "January 2006" }}</p>
+            </div>
 
-        <hr class="text-gray-300 my-3">
+            <div>
+                {{/*  Stars  */}}
+                {{ range (seq 1 $stars) }}
+                    {{ partial "icons/star.html" (dict "color" "text-rose-800") }}
+                {{ end }}
+                {{/*  Remaining stars  */}}
+                {{ if gt $remainingStars 0 }}
+                    {{ range (seq 1 $remainingStars) }}
+                        {{ partial "icons/star.html" (dict "color" "text-slate-400") }}
+                    {{ end }}
+                {{ end }}
+            </div>
 
+            {{/*  Tags  */}}
+            {{ partial "sections/recipes/tags.html" $tags }}
+            
+            {{/*  Summary  */}}
+            <p class="mt-3 text-sm font-light leading-5">{{ .Params.summary }}</p>
+            
+            {{/*  Summary prep  */}}
+            {{ partial "sections/recipes/summary.html" .Params.pre }}
+            
+            <hr class="text-gray-300">
+            
+            {{/*  Steps  */}}
+            <article class="prose prose-sm mt-3">{{ .Content }}</article>
+
+            <hr class="text-gray-300 my-3">
+
+        </div>
     </div>
-</div>
 {{ end }}

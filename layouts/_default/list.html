@@ -1,5 +1,6 @@
 {{ define "main" }}
-{{ $currDir := .Page.File.Dir }}
+
+    {{ $currDir := .Page.File.Dir }}
     {{ if eq $currDir "about/" }}
         {{ partial "sections/about.html" . }}
     {{ else }}
@@ -12,7 +13,7 @@
         <p>{{ .Pages }}</p>
         <ul>
             {{ range .Pages }}
-            <li>{{ .Content }}</li>
+                <li>{{ .Content }}</li>
             {{ end }}
         </ul>
     {{ end }}

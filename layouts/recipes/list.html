@@ -1,0 +1,19 @@
+{{ define "main" }}
+    
+<div>
+    <h3>{{ .Title }}</h3>
+    <p>{{ .Kind }}</p>
+    {{ range .Pages }}
+        <div>
+            <p>{{ .Title }}</p>
+            <p>{{ .Kind }}</p>
+            {{ range .Pages }}
+                <h3>{{ .Title }}</h3>
+                <p>{{ .Kind }}</p>
+                <p>{{ .Params.summary }}</p>
+            {{ end }}
+        </div>
+    {{ end }}
+</div>
+
+{{ end }}
