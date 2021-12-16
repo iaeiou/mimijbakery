@@ -4,7 +4,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'corinth': ['corinthia', 'cursive'],
-        'slab': ['"roboto slab"', 'serif']
+        'slab': ['"roboto slab"', 'serif'],
+        'bitter': ['bitter', 'serif']
       },
       animation: {
         slideInLeft: '1s ease-out 0s 1 slideInLeft',

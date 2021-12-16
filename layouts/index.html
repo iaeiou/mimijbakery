@@ -5,11 +5,4 @@
         {{ $test }}
     </h2>
 
-    {{/*  Looping through Recipes sections  */}}
-    <div class="flex justify-between w-full">
-        {{ range first 3 (where .Site.RegularPages "Section" "recipes") }}
-            {{ partial "sections/recipes/recipe-card.html" . }}
-        {{ end }}
-    </div>
-
 {{ end }}

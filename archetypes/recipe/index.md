@@ -1,8 +1,8 @@
 ---
-title: "Citrus Marinated Chicken"
-cardName: C.M. Chicken
-date: 2021-12-14T08:22:46-05:00
-draft: false
+title: "{{ replace .Name "-" " " | title }}"
+cardName: ""
+date: {{ .Date }}
+draft: true
 summary:
   "A delicious, citrusy chicken recipe. Can be grilled or cooked inside. Can use the
   leftovers for an amzing chicken salad."

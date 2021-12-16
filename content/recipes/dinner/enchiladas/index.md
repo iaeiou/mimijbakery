@@ -1,7 +1,7 @@
 ---
-title: "Citrus Marinated Chicken"
-cardName: C.M. Chicken
-date: 2021-12-14T08:22:46-05:00
+title: "Enchiladas"
+cardName: ""
+date: 2021-12-16T15:26:42-06:00
 draft: false
 summary:
   "A delicious, citrusy chicken recipe. Can be grilled or cooked inside. Can use the
@@ -30,7 +30,7 @@ ingredients:
   - 1 teaspoon black pepper
   - 1 teaspoon garlic powder
   - 1 teaspoon onion powder
-stars: 4
+stars: 5
 hasBlog: false
 author: "Bret Beatty"
 ---
