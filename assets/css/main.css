@@ -1199,10 +1199,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 4rem;
 }
 
-.h-3\/4 {
-  height: 75%;
-}
-
 .h-2\/3 {
   height: 66.666667%;
 }
@@ -1401,14 +1397,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0.75rem;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .py-2 {
@@ -1429,11 +1425,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .pt-5 {

@@ -13,3 +13,11 @@
 .main-card {
   animation: 1s ease-out 0s 1 slideInLeft;
 }
+
+html.sr .load-hidden {
+  visibility: hidden;
+}
+
+html.sr .scroller {
+  visibility: hidden;
+}
