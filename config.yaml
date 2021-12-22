@@ -1,4 +1,4 @@
-baseURL: 'http://mimijbakery.com/'
+baseURL: '/'
 languageCode: 'en-us'
 title: "Mimi J's Bakery"
 params:
