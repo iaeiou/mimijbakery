@@ -58,12 +58,12 @@
                 <p class="text-[8px]">{{ .Date.Format "January 2006" }}</p>
             </div>
 
+            {{/*  Stars  */}}
             <div>
-                {{/*  Stars  */}}
                 {{ range (seq 1 $stars) }}
                     {{ partial "icons/star.html" (dict "color" "text-rose-800") }}
                 {{ end }}
-                {{/*  Remaining stars  */}}
+            {{/*  Remaining stars  */}}
                 {{ if gt $remainingStars 0 }}
                     {{ range (seq 1 $remainingStars) }}
                         {{ partial "icons/star.html" (dict "color" "text-slate-400") }}

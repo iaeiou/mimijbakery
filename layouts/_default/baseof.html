@@ -17,7 +17,7 @@
         </div>
 
         {{/*  TODO: Footer  */}}
-        {{ $js := resources.Get "js/main.js" | js.Build  | resources.Minify | resources.Fingerprint }}
+        {{ $js := resources.Get "js/main.js" | js.Build | resources.Minify | resources.Fingerprint }}
 
         <script language="javascript" type="text/javascript"  src={{ $js.Permalink | absURL }}></script>
     </body>

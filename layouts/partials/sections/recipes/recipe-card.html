@@ -1,4 +1,4 @@
-<div class=" w-60 px-4 h-68 relative mt-3 hover:opacity-50 transition-opacity duration-150">
+<div class="rec-card rounded overflow-hidden w-60 px-4 opacity-0 h-68 relative mt-3 hover:!opacity-50 transition-opacity duration-150">
     
     {{ $categories := "" }}
     {{ with .Params.categories }}
@@ -10,7 +10,7 @@
     {{/*  Link to the recipe's page  */}}
     <a href="{{ .RelPermalink }}">
         
-        <div class="overflow-hidden h-2/3 w-30 scroller load-hidden">
+        <div class="overflow-hidden rounded-sm h-2/3 w-30 scroller load-hidden">
             {{ with $thumbNail }}
                 <img 
                     class="object-cover h-full w-full" 

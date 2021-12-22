@@ -21,3 +21,20 @@ html.sr .load-hidden {
 html.sr .scroller {
   visibility: hidden;
 }
+
+div #weather-msg {
+  margin: auto;
+  border-radius: 5px;
+  color: rgb(159 18 57);
+  width: 50%;
+  font-size: larger;
+  font-weight: 500;
+  font-family: "Roboto Slab";
+  border: 2px solid rgb(159 18 57);
+  padding: 10px 5px;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 25%;
+  /* opacity: 0; */
+}
